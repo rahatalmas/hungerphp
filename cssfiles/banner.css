@@ -1,0 +1,50 @@
+.banner-container{
+   width: 100vw;
+   display: flex;
+   flex-direction: row;
+   overflow: hidden;
+   
+}
+.wrapper{
+  height: 100%;
+  transition: all 2s;
+}
+.banner-1{
+    width: 100vw;
+    height: 65vh;
+    background-color: skyblue;
+    text-align: center;
+}
+.banner-2{
+    text-align: center;
+    width: 100vw;
+    height: 65vh;
+    background-color: rgb(212, 135, 235);
+}
+.banner-3{
+    text-align: center;
+    width: 100vw;
+    height: 65vh;
+    background-color: rgb(197, 235, 135);
+}
+
+.banner-content{
+
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}/*    max-width: 1100px;*/
+
+.banner-text{
+    flex: 1;
+}
+.banner-img{
+    flex:1;
+    margin:auto;
+}
+.b-img{
+    flex: 1;
+    margin: auto;
+    object-fit: cover;
+}
