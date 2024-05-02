@@ -1,5 +1,5 @@
 .banner-container{
-   width: 100vw;
+   width: 100%;
    display: flex;
    flex-direction: row;
    overflow: hidden;
@@ -11,20 +11,20 @@
 }
 .banner-1{
     width: 100vw;
-    height: 65vh;
+    height: 60vh;
     background-color: skyblue;
     text-align: center;
 }
 .banner-2{
     text-align: center;
     width: 100vw;
-    height: 65vh;
+    height: 60vh;
     background-color: rgb(212, 135, 235);
 }
 .banner-3{
     text-align: center;
     width: 100vw;
-    height: 65vh;
+    height: 60vh;
     background-color: rgb(197, 235, 135);
 }
 
@@ -45,6 +45,7 @@
 }
 .b-img{
     flex: 1;
+    height: 100vh;
     margin: auto;
     object-fit: cover;
 }
