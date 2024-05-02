@@ -3,16 +3,39 @@ body{
 }
 .food-card{
    width: 250px;
+   height: 335px;
    background-color: rgb(253, 229, 200);
    border-radius: 7px;
    margin: 10px;
 }
 .food-card-img{
+   height: 150px;
+   object-fit: cover;
    border-top-left-radius: 7px;
    border-top-right-radius: 7px;
 }
-.food-card-description{
+/*
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    white-space: pre-wrap; 
+    margin:0px 10px;
+*/
+.food-card-description {
    padding: 5px 10px;
+
+}
+.food-card-description p,h3,h4{
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2; 
+   white-space: pre-wrap; 
 }
 .food-card-add-btn{
    width: 100%;

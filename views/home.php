@@ -82,7 +82,7 @@ $foods = json_decode($jsonData);
         </div>
         <div class="featured-foods">
             <div class="section-head">
-                <h2>Featured Foods</h2>
+                <h2>Featured</h2>
                 <h2>filter</h2>
             </div>
             <div id="food-section-items" class="section-items">
@@ -93,9 +93,9 @@ $foods = json_decode($jsonData);
                        <img class=\"food-card-img\" style=\"width: 100%;\" src=\"https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg\"/>
                        <div class=\"food-card-description\">
                            <h3>$food->food_name</h3>
-                           <p> $food->food_description</p>
+                           <p>ramen ramen ramen ramen ramen $food->food_description</p>
                            <h4>$food->food_provider_id</h4>
-                           <h4>$food->food_price</h4>
+                           <h4>Price: $food->food_price Tk</h4>
                            <button class=\"food-card-add-btn\">Add To Card</button>
                        </div>
                        </div>
@@ -106,7 +106,7 @@ $foods = json_decode($jsonData);
                     <img class="food-card-img" style="width: 100%;" src="https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg"/>
                     <div class="food-card-description">
                         <h3>ichurika ramen</h3>
-                        <p>ramen please.</p>
+                        <p>ramen please. hello i'm naruto uzumaki . i love ramen the most. ramen ramen . dattebayo</p>
                         <h4>leaf village</h4>
                         <h4>price: 250</h4>
                         <button class="food-card-add-btn">Add To Card</button>
@@ -119,6 +119,6 @@ $foods = json_decode($jsonData);
 
     </footer>
 </body>
-<script type="module" src="./jsfiles/slider.js"></script>
-<script type="module" src="./jsfiles/getfoods.js"></script>
+<script type="module" src="../jsfiles/slider.js"></script>
+<script type="module" src="../jsfiles/getfoods.js"></script>
 </html>
