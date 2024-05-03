@@ -104,7 +104,28 @@ align-items: center;
   margin: 7px;
 }
 .calculation-details{
-  height: 20vh;
+  margin-top: 25px;
   background-color: rgb(252, 229, 127);
   border-radius: 10px;
+  padding: 10px;
+}
+.calculation-details h2{
+  margin: 10px 0px;
+}
+.calculation-details p{
+  margin: 10px 0px;
+}
+.calculation-details div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calculation-details button{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(253, 173, 54);
 }
