@@ -10,10 +10,10 @@ $featuredfoods = array_slice($foods,0,8);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device;-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="../cssfiles/header.css">
     <link rel="stylesheet" href="../cssfiles/banner.css">
     <link rel="stylesheet" href="../cssfiles/foodcard.css">
     <link rel="stylesheet" href="../cssfiles/apppromote.css">
+    <link rel="stylesheet" href="../cssfiles/header.css">
 </head>
 <body>
     <header >
