@@ -1,17 +1,18 @@
+body{
+  background-color: bisque;
+}
 .basket-container{
    display: flex;
    flex-direction: row;
    max-width: 1200px;
+   padding: 20px;
    margin: auto;
 }
 .basket-item-container{
    flex:3;
-   height: 50vh;
-   background-color: rgb(128, 252, 123);
    padding: 20px;
 }
 .basket-item-container-header{
-   background-color: gray;
 }
 .b-i-c-h2{
   margin: 0;
@@ -21,10 +22,10 @@
 }
 
 .basket-items{
-  background-color: rgb(126, 68, 68);
 }
 .basket-items-header{
   display: flex;
+  margin-top: 10px;
 }
 .b-i-h-1{
   flex: 1.5;
@@ -33,13 +34,77 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
-  background-color: red;
 }
 .basket-item-card{
- height: 100px;
- background-color: rebeccapurple;
+ height: 110px;
+ display: flex;
+ background-color: rgb(247, 202, 143);
+ padding: 10px;
+ border-radius: 10px;
+ margin-bottom: 10px;
 }
+.item-info-section{
+flex: 1.5;
+display: flex;
+align-items: center;
+}
+.basket-card-img{
+ flex: 0.5;
+ height: 100%;
+ border-radius: 10px;
+ margin-right: 5px;
+}
+.basket-card-img img{
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.basket-card-description{
+ flex: 1;
+}
+
+.item-taken-info{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.basket-quantity-btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.basket-quantity-btns button{
+  background-color: rgb(212, 145, 69);
+  outline: none;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  margin:7px;
+
+}
+
+
+
 .basket-items-calculations{
   flex: 1;
-  background-color: plum;
+  padding: 20px;
+}
+.basket-calculation-card{
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 10px;
+}
+.order-info{
+}
+.order-info h4{
+  margin: 7px;
+}
+.calculation-details{
+  height: 20vh;
+  background-color: rgb(252, 229, 127);
+  border-radius: 10px;
 }
