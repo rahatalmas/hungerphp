@@ -14,10 +14,12 @@
                  <h1>Hunger</h1>
              </div>
              <nav class="nav-container">
-             <a class="nav-item" href="/">Home</a>
+             <a class="nav-item" href="/hungerAppPhp/views/home.php">Home</a>
              <a class="nav-item" href="/">Foods</a>
              <a class="nav-item" href="/">Hotels</a>
              <a class="nav-item" href="/">About</a>
+             <a class="nav-item" href="/hungerAppPhp/basketpage.php">Basket</a>
+            <a class="nav-item" href="/hungerAppPhp/views/registerpage.php">Login</a>
              </nav>
              <div class="profile-photo">
                  <img src="../assets/anya.jpg"/>
