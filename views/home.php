@@ -11,9 +11,9 @@ $featuredfoods = array_slice($foods,0,8);
     <meta name="viewport" content="width=device;-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="../cssfiles/banner.css">
-    <link rel="stylesheet" href="../cssfiles/foodcard.css">
+    <link rel="stylesheet" href="../cssfiles/itemcard.css">
     <link rel="stylesheet" href="../cssfiles/apppromote.css">
-    <link rel="stylesheet" href="../cssfiles/header.css">
+    <link rel="stylesheet" href="../cssfiles/headerpart.css">
 </head>
 <body>
     <header >
@@ -32,6 +32,7 @@ $featuredfoods = array_slice($foods,0,8);
                 <img src="../assets/anya.jpg"/>
                 <a class="" style="font-size: large;margin-left: 3px;cursor: pointer;"><?php  ?></a>
             </div>
+            <h4 onclick="openCart()">MyBas</h4>
        </div>
     </header>
     <main>
