@@ -1,0 +1,45 @@
+.basket-container{
+   display: flex;
+   flex-direction: row;
+   max-width: 1200px;
+   margin: auto;
+}
+.basket-item-container{
+   flex:3;
+   height: 50vh;
+   background-color: rgb(128, 252, 123);
+   padding: 20px;
+}
+.basket-item-container-header{
+   background-color: gray;
+}
+.b-i-c-h2{
+  margin: 0;
+}
+.b-i-c-p{
+  margin: 0;
+}
+
+.basket-items{
+  background-color: rgb(126, 68, 68);
+}
+.basket-items-header{
+  display: flex;
+}
+.b-i-h-1{
+  flex: 1.5;
+}
+.b-i-h-2{
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  background-color: red;
+}
+.basket-item-card{
+ height: 100px;
+ background-color: rebeccapurple;
+}
+.basket-items-calculations{
+  flex: 1;
+  background-color: plum;
+}
