@@ -26,7 +26,7 @@ $featuredfoods = array_slice($foods,0,8);
             <a class="nav-item" href="/hungerAppPhp/views/home.php">Home</a>
             <a class="nav-item" href="/">Foods</a>
             <a class="nav-item" href="/">Hotels</a>
-            <a class="nav-item" href="/hungerAppPhp/basketpage.php">Basket</a>
+            <a class="nav-item" href="/hungerAppPhp/basketpage.html">Basket</a>
             <a class="nav-item" href="/hungerAppPhp/views/registerpage.php">Login</a>
             </nav>
             <div class="profile-photo">
