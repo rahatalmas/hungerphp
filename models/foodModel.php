@@ -1,8 +1,8 @@
 <?php
 include '../models/database.php';
-function get_foods($table){
+function get_foods(){
     $arr = [];
-    $sql = "SELECT * FROM $table";
+    $sql = "SELECT * FROM foods INNER JOIN hotels ON foods.food_provider_id = hotels.hotel_id";
     global $conn;
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {

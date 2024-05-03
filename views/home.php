@@ -1,7 +1,8 @@
 <?php
 include '../models/foodModel.php';
-$jsonData = get_foods("foods");
+$jsonData = get_foods();
 $foods = json_decode($jsonData);
+$featuredfoods = array_slice($foods,0,8);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +13,7 @@ $foods = json_decode($jsonData);
     <link rel="stylesheet" href="../cssfiles/header.css">
     <link rel="stylesheet" href="../cssfiles/banner.css">
     <link rel="stylesheet" href="../cssfiles/foodcard.css">
+    <link rel="stylesheet" href="../cssfiles/apppromote.css">
 </head>
 <body>
     <header >
@@ -87,22 +89,22 @@ $foods = json_decode($jsonData);
             </div>
             <div id="food-section-items" class="section-items">
                  <?php
-                   foreach ($foods as $food) {
+                   foreach ($featuredfoods as $food) {
                        echo  
                        "<div class=\"food-card\">
                        <img class=\"food-card-img\" style=\"width: 100%;\" src=\"$food->food_picture\"/>
                        <div class=\"food-card-description\">
                            <h3>$food->food_name</h3>
                            <p>$food->food_description</p>
-                           <h4>$food->food_provider_id</h4>
-                           <h4>Price: $food->food_price Tk</h4>
+                           <h4>$food->hotel_name</h4>
+                           <h4 class=\"price-tag\">Price: $food->food_price Tk</h4>
                            <button class=\"food-card-add-btn\">Add To Card</button>
                        </div>
                        </div>
                        ";
                    }
                  ?>
-                 <div class="food-card">
+                <!-- <div class="food-card">
                     <img class="food-card-img" style="width: 100%;" src="https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg"/>
                     <div class="food-card-description">
                         <h3>ichurika ramen</h3>
@@ -111,11 +113,11 @@ $foods = json_decode($jsonData);
                         <h4>price: 250</h4>
                         <button class="food-card-add-btn">Add To Card</button>
                     </div>
-                 </div>
+                 </div>-->
             </div>
         </div>
-        <div>
-            
+        <div class="app-promote">
+            <h1>hello</h1>
         </div>
     </main>
     <footer>
