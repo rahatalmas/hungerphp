@@ -90,10 +90,10 @@ $foods = json_decode($jsonData);
                    foreach ($foods as $food) {
                        echo  
                        "<div class=\"food-card\">
-                       <img class=\"food-card-img\" style=\"width: 100%;\" src=\"https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg\"/>
+                       <img class=\"food-card-img\" style=\"width: 100%;\" src=\"$food->food_picture\"/>
                        <div class=\"food-card-description\">
                            <h3>$food->food_name</h3>
-                           <p>ramen ramen ramen ramen ramen $food->food_description</p>
+                           <p>$food->food_description</p>
                            <h4>$food->food_provider_id</h4>
                            <h4>Price: $food->food_price Tk</h4>
                            <button class=\"food-card-add-btn\">Add To Card</button>
@@ -114,11 +114,14 @@ $foods = json_decode($jsonData);
                  </div>
             </div>
         </div>
+        <div>
+            
+        </div>
     </main>
     <footer>
 
     </footer>
 </body>
-<script type="module" src="../jsfiles/slider.js"></script>
-<script type="module" src="../jsfiles/getfoods.js"></script>
+    <script type="module" src="../jsfiles/slider.js"></script>
+    <script type="module" src="../jsfiles/getfoods.js"></script>
 </html>
