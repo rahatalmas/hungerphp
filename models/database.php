@@ -2,7 +2,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $db = "foodapp";
+    $db = "hungerdb";
 
     // Create connection
     $conn = new mysqli($host, $username, $password, $db);
