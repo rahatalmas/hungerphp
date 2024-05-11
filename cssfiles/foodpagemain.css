@@ -1,0 +1,47 @@
+.food-page-main{
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 1500px;
+}
+
+.food-page-content{
+  flex: 1;
+  background-color: rgb(178, 217, 252);
+}
+
+.f-p-header-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: burlywood;
+  padding: 10px;
+}
+.f-p-filter{
+  display: flex;
+}
+.f-p-crnt-filter{
+  margin-right: 5px;
+}
+.f-p-filters{
+}
+.f-p-header-search-bar{
+
+}
+
+.f-p-search-bar{
+
+}
+
+.f-p-search-btn{
+
+}
+
+.f-p-foods-section{
+
+}
+
+.food-page-side-panel{
+  flex:0.3;
+  background-color: aquamarine;
+}
