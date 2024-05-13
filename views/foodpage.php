@@ -65,17 +65,8 @@
         <div class="food-page-main">
             <div class="food-page-content">
                 <div class="f-p-foods-section">
-                    <div class="food-card">
-                        <img class="food-card-img" style="width: 100%;" src="https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg"/>
-                        <div class="food-card-description">
-                            <h3>ichurika ramen</h3>
-                            <p>ramen please. hello i'm naruto uzumaki . i love ramen the most. ramen ramen . dattebayo</p>
-                            <h4>leaf village</h4>
-                            <h4>price: 250</h4>
-                            <button class="food-card-add-btn">Add To Card</button>
-                        </div>
-                     </div>
-                     <?php
+                    
+                  <?php
                    foreach ($foods as $food) {
                        echo  
                        "<div class=\"food-card\">
@@ -89,12 +80,49 @@
                        </div>
                        </div>
                        ";
-                   }
-                 ?>
+                    }
+                   ?>
+                   <div class="food-card">
+                        <img class="food-card-img" style="width: 100%;" src="https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg"/>
+                        <div class="food-card-description">
+                            <h3>ichurika ramen</h3>
+                            <p>ramen please. hello i'm naruto uzumaki . i love ramen the most. ramen ramen . dattebayo</p>
+                            <h4>leaf village</h4>
+                            <h4>price: 250</h4>
+                            <button class="food-card-add-btn">Add To Card</button>
+                        </div>
+                     </div>
+
                 </div>
              </div>
              <div class="food-page-side-panel">
-
+                <div class="custom-order-card">
+                    <h3>Make custom order</h3>
+                    <form>
+                        <label>Select date and time</label>
+                        <input id="date-time" class="c-inp" type="datetime-local" name="datetimelocal"/>
+                        <label>Select Meal Category</label>
+                        <select id="mealtype" class="c-inp" name="mealtype">
+                            <option class="c-inp">Breakfast</option>
+                            <option class="c-inp">Lunch</option>
+                            <option class="c-inp">Dinner</option>
+                        </select>
+                        <input type="button" value="Add To List" class="custom-order-btn" id="custom-order-btn"/>
+                    </form>
+                </div>
+                <div class="custom-order-list">
+                    <h3>Your Order List</h3>
+                    <div class="list-card">
+                       <h2></h2>
+                    </div>
+                    <div class="list-card">
+                        <h2></h2>
+                     </div>
+                     <div class="list-card">
+                        <h2></h2>
+                     </div>
+                     <input type="button" value="Make Order" class="custom-order-btn"/>
+                </div>
              </div>
         </div>
         <div class="footer">
@@ -104,3 +132,6 @@
 </body>
 <script src="../jsfiles/slider.js"></script>
 </html>
+
+<!--
+-->
