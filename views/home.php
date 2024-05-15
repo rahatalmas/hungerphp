@@ -1,5 +1,6 @@
 <?php
 include '../models/foodModel.php';
+session_start();
 $jsonData = get_foods();
 $foods = json_decode($jsonData);
 $featuredfoods = array_slice($foods,0,4);
@@ -25,26 +26,10 @@ $featuredfoods = array_slice($foods,0,4);
     />
 </head>
 <body>
-    <header >
-       <div class="header-component">
-            <div class="logo">
-                <!--<img src="./assets/anya.jpg"/>-->
-                <h1>Hunger</h1>
-            </div>
-            <nav class="nav-container">
-            <a class="nav-item" href="/hungerAppPhp/views/home.php">Home</a>
-            <a class="nav-item" href="/hungerphp/views/foodpage.php">Foods</a>
-            <a class="nav-item" href="/">Hotels</a>
-            <a class="nav-item" href="/hungerphp/basketpage.html">Basket</a>
-            <a class="nav-item" href="hungerphp/views/registerpage.php">Login</a>
-            </nav>
-            <div class="profile-photo">
-                <img src="../assets/anya.jpg"/>
-                <a class="" style="font-size: large;margin-left: 3px;cursor: pointer;"><?php  ?></a>
-            </div>
-            <h4 onclick="openCart()">MyBas</h4>
-       </div>
-    </header>
+
+    <?php
+      include '../views/header.php';
+    ?>
     <main>
         <div class="banner-container">
             <div id="wrapper" class="wrapper">

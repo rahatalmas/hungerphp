@@ -24,9 +24,11 @@
     if($conn->query($sql) === TRUE) {
         echo "New record created successfully";
         header("Location: http://localhost/hungerphp/views/home.php");
+        return 1;
     }else {
         echo "Error: " . $conn->error;
         header("Location: http://localhost/hungerphp/views/registerpage.php");
+        return 0;
     }
   }
 ?>

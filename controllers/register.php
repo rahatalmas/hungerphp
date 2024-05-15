@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $user_bio = $_POST['user_bio'];
     $user_info = array("user_name"=>$user_name,"user_email"=>$user_email,
                        "user_password"=>$user_password,"user_bio"=>$user_bio);
-    register_user($user_info);
+    $retundata = register_user($user_info);
 }
 
 //header("Location: http://localhost/hungerappphp/home.php");

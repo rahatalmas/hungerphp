@@ -1,32 +1,18 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./cssfiles/headerpart.css">
-    <link rel="stylesheet" href="./cssfiles/basketpage.css">
+    <link rel="stylesheet" href="../cssfiles/headerpart.css">
+    <link rel="stylesheet" href="../cssfiles/basketpage.css">
 </head>
 <body>
-    <header >
-        <div class="header-component">
-             <div class="logo">
-                 <!--<img src="./assets/anya.jpg"/>-->
-                 <h1>Hunger</h1>
-             </div>
-             <nav class="nav-container">
-             <a class="nav-item" href="/hungerAppPhp/views/home.php">Home</a>
-             <a class="nav-item" href="/">Foods</a>
-             <a class="nav-item" href="/">Hotels</a>
-             <a class="nav-item" href="/">About</a>
-             <a class="nav-item" href="/hungephp/basketpage.html">Basket</a>
-            <a class="nav-item" href="/hungerphp/views/registerpage.php">Login</a>
-             </nav>
-             <div class="profile-photo">
-                 <img src="../assets/anya.jpg"/>
-                 <a class="" style="font-size: large;margin-left: 3px;cursor: pointer;"><?php  ?></a>
-             </div>
-        </div>
-     </header>
+     <?php
+     include '../views/header.php';
+     ?>
      <main>
         <div class="basket-container">
             <div class="basket-item-container">

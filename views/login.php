@@ -31,6 +31,12 @@
 h2{
     text-align: center;
 }
+a{
+    /* text-align: center; */
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #963315;
+}
 /*230*/
 </style>
 <body>
@@ -40,12 +46,13 @@ h2{
                 <img src="../assets/logo.png" />
             </div>
             <h2>LogIn</h2>
-            <form class="form" method="POST" action="">
+            <form class="form" method="POST" action="../controllers/logincontrol.php">
                 <label class="form-label" for="ser_name">Username or Email</label>
                 <input id="user_name" name="user_name" class="form-input" required type="text" placeholder="Username or Email" />
                 <label class="form-label" for="user_password">Password</label>
                 <input id="user_password" name="user_password" class="form-input" required type="password" placeholder="********" />
                 <input id="reg-sub-btn" name="submit" class="reg-sub-btn form-input" type="submit" value="login"/>
+                <a href="./loginas.php">New to Hunger? SignUp</a>
              </form>
              <div class="food-deli-bike">
                 <img id="bike" class="img1" src="../assets/food_deli.gif"/>

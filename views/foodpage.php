@@ -3,6 +3,7 @@
     $jsonData = get_foods();
     $foods = json_decode($jsonData);
     //$featuredfoods = array_slice($foods,0,4);
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,24 +21,9 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="header-component">
-             <div class="logo">
-                 <!--<img src="./assets/anya.jpg"/>-->
-                 <h1>Hunger</h1>
-             </div>
-             <nav class="nav-container">
-             <a class="nav-item" href="/">Home</a>
-             <a class="nav-item" href="/">Foods</a>
-             <a class="nav-item" href="/">Hotels</a>
-             <a class="nav-item" href="/">About</a>
-             </nav>
-             <div class="profile-photo">
-                 <img src="../assets/anya.jpg"/>
-                 <a class="" style="font-size: large;margin-left: 3px;cursor: pointer;"><?php  ?></a>
-             </div>
-        </div>
-     </header>
+    <?php
+      include '../views/header.php';
+    ?>
     <main class="yo">
         <div class="food-page-banner">
             <div class="banner-content">
@@ -69,16 +55,19 @@
                   <?php
                    foreach ($foods as $food) {
                        echo  
-                       "<div class=\"food-card\">
-                       <img class=\"food-card-img\" style=\"width: 100%;\" src=\"$food->food_picture\"/>
-                       <div class=\"food-card-description\">
-                           <h3>$food->food_name</h3>
-                           <p>$food->food_description</p>
-                           <h4>$food->hotel_name</h4>
-                           <h4 class=\"price-tag\">Price: $food->food_price Tk</h4>
-                           <button class=\"food-card-add-btn\">Add To Card</button>
-                       </div>
-                       </div>
+                       
+                       "
+                      
+                       <div class=\"food-card\">
+                            <img name=\"fo class=\"food-card-img\" style=\"width: 100%;\" src=\"$food->food_picture\"/>
+                            <div class=\"food-card-description\">
+                                <h3>$food->food_name</h3>
+                                <p>$food->food_description</p>
+                                <h4>$food->hotel_name</h4>
+                                <h4 class=\"price-tag\">Price: $food->food_price Tk</h4>
+                                <button class=\"food-card-add-btn\" onClick=\"addToCart($food->food_id)\">Add To Card</button>
+                            </div>
+                       </div> 
                        ";
                     }
                    ?>
@@ -89,7 +78,9 @@
                             <p>ramen please. hello i'm naruto uzumaki . i love ramen the most. ramen ramen . dattebayo</p>
                             <h4>leaf village</h4>
                             <h4>price: 250</h4>
-                            <button class="food-card-add-btn">Add To Card</button>
+                            <form method="POST" action="../controllers/addtobasket.php">
+                              <input type="submit" value="Add To Card" class="food-card-add-btn"/>
+                           </form>
                         </div>
                      </div>
 
@@ -130,7 +121,23 @@
         </div>
     </main>
 </body>
-<script src="../jsfiles/slider.js"></script>
+<!-- <script >/src="../jsfiles/slider.js"</script> -->
+<script>
+    async function addToCart(food_id) {
+        const body = new FormData();
+        body.set("food_id", food_id);
+        try {
+            const resp = await fetch("http://localhost/hungerphp/controllers/addtobasket.php", {
+                method: "POST",
+                body,
+            });
+            const data = await resp.json();
+            console.log(data);
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+</script>
 </html>
 
 <!--

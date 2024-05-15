@@ -8,16 +8,16 @@
             <div class="hotel-des">
                 <img src="../assets/hotels.png" alt="">
             <h1>Sign in for business</h1>
-            <button class="sub-btn">Sign in</button>
-            <h4>Already have an account? <a href="">login</a></h4>
+            <button class="sub-btn">Sign Up</button>
+            <h4>Already have an account? <a href="./login.php">login</a></h4>
             </div>
         </div>
         <div class="user">
             <div class="hotel-des">
                 <img src="../assets/Ittadakimasu____Cessa_Lafaliqa-removebg-preview.png" alt="">
                 <h1>Subscribe as food eater</h1>
-            <button class="user-sub-btn">Sign in</button>
-            <h4>Already have an account? <a href="">login</a></h4>
+            <a href="./registerpage.php"><button class="user-sub-btn">Sign Up</button></a>
+            <h4>Already have an account? <a href="./login.php">login</a></h4>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@
 <style>
     body{
        
-        background-color: aquamarine;
+        height:100vh;
     }
-    h4 a{
-        color: ;
+    .hotel h4 a{
+        color: rgb(253, 191, 6);
     }
     .root{
         display: flex;
@@ -42,7 +42,7 @@
         color: #ED9455;
     }
     .hotel-des{
-        padding: 20%;
+        padding:50px;
         text-align: center;
     }
     .user{
