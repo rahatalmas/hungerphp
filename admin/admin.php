@@ -5,6 +5,7 @@
     $foods = json_decode($jsonData);
     //$featuredfoods = array_slice($foods,0,4);
     session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@
 </head>
 <body>
      <?php
-     include '../views/header.php';
+     include '../admin/adminbar.php';
      ?>
      <div id="food-section-items" class="section-items">
         <?php
@@ -32,12 +33,16 @@
                   <p>$food->food_description</p>
                   <h4>$food->hotel_name</h4>
                   <h4 class=\"price-tag\">Price: $food->food_price Tk</h4>
-                  <button class=\"food-card-add-btn\">Add To Card</button>
+                  <div class=\"admin-btns\">
+                    <a href=\"edit.php?id=$food->food_id\"><button class=\"admin-button\">Edit</button></a>
+                    <a href=\"delete.php?id=$food->food_id\"><button class=\"admin-button\">Delete</button></a>
+                  </div>
               </div>
               </div>
               ";
           }
         ?>
    </div>
+   <div>
 </body>
 </html>

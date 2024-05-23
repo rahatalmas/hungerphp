@@ -9,7 +9,7 @@
                 <img src="../assets/hotels.png" alt="">
             <h1>Sign in for business</h1>
             <button class="sub-btn">Sign Up</button>
-            <h4>Already have an account? <a href="./login.php">login</a></h4>
+            <h4>Already have an account? <a href="./hotellogin.php">login</a></h4>
             </div>
         </div>
         <div class="user">
