@@ -153,3 +153,19 @@ border-radius: 10px 20px;
   margin: 10px 0px;
   border-radius: 5px; 
 }
+
+.orderlist{
+  background-color: rgb(242, 216, 182);
+}
+.option-btn{
+
+  border: 1px solid #3a1d1e;
+  padding: 10px 0;
+}
+.order-content{
+  width: 70%;
+}
+.change_status{
+  margin-right: 20px;
+
+}

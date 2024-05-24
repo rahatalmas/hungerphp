@@ -24,7 +24,7 @@
     </header>
     <div id="mySidenav" class="">
     <a id="dashborad" href="/hungerphp/admin/admin.php">Dashborad</a>
-    <a id="pen-order" href="">Pending Orders</a>
+    <a id="pen-order" href="./orderpending.php">Pending Orders</a>
     <a id="order-history" href="/hungerphp/admin/add.php">Add Menu</a>
     <a id="profile" href="./adminprofile.php">Profile</a>
     <a href="/hungerphp/views/logout.php" id="logout">LogOut</a>
