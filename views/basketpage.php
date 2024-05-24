@@ -14,6 +14,20 @@ $cartList = fetchCartItems();
     <link rel="stylesheet" href="../cssfiles/headerpart.css">
     <link rel="stylesheet" href="../cssfiles/basketpage.css">
 </head>
+
+<style>
+    .cart-remove-btn{
+        background-color: rgb(212, 145, 69);
+        outline: none;
+        border: 1px solid gainsboro;
+        border-radius: 10px;
+        cursor: pointer;
+        height: 35px;
+        width: 35px;
+        margin:5px;
+    }
+</style>
+
 <body>
      <?php
      include '../views/header.php';
@@ -34,6 +48,7 @@ $cartList = fetchCartItems();
                             <h3>Total Price</h3>
                         </div>
                     </div>
+                    
                     <?php
                         foreach ($cartList as $foodItem) {
                             ?>
@@ -55,14 +70,18 @@ $cartList = fetchCartItems();
                                         <button>+</button>
                                     </div>
                                     <h4><?php echo $foodItem['food_price'] * $foodItem['quantity']; ?> tk</h4>
+                                    <button class="cart-remove-btn">R</button>
                                 </div>
                             </div>
                             <?php
                         }
                     ?>
+
                 </div>
             </div>
             
+
+
             <div class="basket-items-calculations">
                 <div class="basket-calculation-card">
                     <div class="order-info">

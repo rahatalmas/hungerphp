@@ -67,6 +67,29 @@ function updateQuantity($user_id,$food_id){
     }
 }
 
+function decreaseQuantity($user_id,$food_id){
+    global $conn;
+
+    $checkQuery = "SELECT quantity FROM basketlist WHERE basketed_user_id = '$user_id' AND basketed_food_id = '$food_id'";
+    $checkResult = $conn->query($checkQuery);
+
+    if ($checkResult->num_rows > 0) {
+        $row = $checkResult->fetch_assoc();
+        $currentQuantity = $row['quantity'];
+        if($currentQuantity>1){
+            $newQuantity = $currentQuantity-1;
+            $updateQuery = "UPDATE basketlist SET quantity = '$newQuantity' WHERE basketed_user_id = '$user_id' AND basketed_food_id = '$food_id'";
+            if ($conn->query($updateQuery) === TRUE) {
+                echo $newQuantity;
+            } else {
+                echo "Error updating quantity: " . $conn->error;
+            }
+        }else{
+            echo $currentQuantity;
+        }
+    }
+}
+
 function delete_from_cart($userId, $foodId) {
     global $conn;
 
