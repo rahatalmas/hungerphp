@@ -1,6 +1,11 @@
 <?php
 session_start();
+include '../models/database.php';
+include '../models/cartModel.php';
+$cartList = fetchCartItems();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,67 +34,32 @@ session_start();
                             <h3>Total Price</h3>
                         </div>
                     </div>
-                    <div class="basket-item-card">
-                            <div class="item-info-section">
-                                 <div class="basket-card-img">
-                                    <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/01/ramen-ponyo-Cropped.jpg" style="width: 100%;"/>
-                                 </div>
-                                 <div class="basket-card-description">
-                                    <h3>Ramen</h3>
-                                    <p>Ghilbi Shop</p>
-                                 </div>
-                            </div>
-                            <div class="item-taken-info">
-                                    <h4>900 tk</h4>
+                    <?php
+                        foreach ($cartList as $foodItem) {
+                            ?>
+                            <div class="basket-item-card">
+                                <div class="item-info-section">
+                                    <div class="basket-card-img">
+                                        <img src="<?php echo $foodItem['food_picture']; ?>" style="width: 100%;" />
+                                    </div>
+                                    <div class="basket-card-description">
+                                        <h3><?php echo $foodItem['food_name']; ?></h3>
+                                        <p><?php echo $foodItem['hotel_name']; ?></p>
+                                    </div>
+                                </div>
+                                <div class="item-taken-info">
+                                    <h4><?php echo $foodItem['food_price']; ?> tk</h4>
                                     <div class="basket-quantity-btns">
                                         <button>-</button>
-                                        <h4>2</h4>
+                                        <h4><?php echo $foodItem['quantity']; ?></h4>
                                         <button>+</button>
                                     </div>
-                                    <h4>1800 tk</h4>
-                            </div>
-                    </div>
-
-                    <div class="basket-item-card">
-                        <div class="item-info-section">
-                             <div class="basket-card-img">
-                                <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/01/ramen-ponyo-Cropped.jpg" style="width: 100%;"/>
-                             </div>
-                             <div class="basket-card-description">
-                                <h3>Ramen</h3>
-                                <p>Ghilbi Shop</p>
-                             </div>
-                        </div>
-                        <div class="item-taken-info">
-                                <h4>900 tk</h4>
-                                <div class="basket-quantity-btns">
-                                    <button>-</button>
-                                    <h4>2</h4>
-                                    <button>+</button>
+                                    <h4><?php echo $foodItem['food_price'] * $foodItem['quantity']; ?> tk</h4>
                                 </div>
-                                <h4>1800 tk</h4>
-                        </div>
-                </div>
-                <div class="basket-item-card">
-                    <div class="item-info-section">
-                         <div class="basket-card-img">
-                            <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/01/ramen-ponyo-Cropped.jpg" style="width: 100%;"/>
-                         </div>
-                         <div class="basket-card-description">
-                            <h3>Ramen</h3>
-                            <p>Ghilbi Shop</p>
-                         </div>
-                    </div>
-                    <div class="item-taken-info">
-                            <h4>900 tk</h4>
-                            <div class="basket-quantity-btns">
-                                <button>-</button>
-                                <h4>2</h4>
-                                <button>+</button>
                             </div>
-                            <h4>1800 tk</h4>
-                    </div>
-            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
             

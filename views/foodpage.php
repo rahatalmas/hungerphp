@@ -50,7 +50,6 @@
         <div class="food-page-main">
             <div class="food-page-content">
                 <div class="f-p-foods-section">
-                    
                   <?php
                    foreach ($foods as $food) {
                        echo  
@@ -117,6 +116,7 @@
     </main>
     <script>
       let cartBtnId = document.getElementsByClassName("food-card-add-btn");
+      let msg = document.getElementById("addmessage");
       for(let i=0;i<cartBtnId.length;i++){
         cartBtnId[i].addEventListener("click",(event)=>{
            let target = event.target;
@@ -125,8 +125,9 @@
            let xml = new XMLHttpRequest();
            xml.onreadystatechange = ()=>{
                if (xml.readyState == 4 && xml.status == 200) {
-                alert(xml.responseText);
-            }
+                console.log(xml.responseText);
+                //msg.innerText = xml.responseText;
+              }
            }
            xml.open("GET","../controllers/addtobasket.php?id="+id,true);
            xml.send();

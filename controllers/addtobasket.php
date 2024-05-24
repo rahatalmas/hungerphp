@@ -1,10 +1,12 @@
 <?php
  session_start();
  include '../models/database.php';
+ include '../models/cartModel.php';
+
  if(isset($_GET["id"])){
+  $user_id = $_SESSION["user"]["user_id"];
   $food_id = $_GET["id"];
-  $_SESSION["basket"] = Arr
-  echo $_SESSION["user"]["user_id"];
-  echo " request for adding food to basket $food_id";
+  //$_SESSION["basket"] = Arr
+  add_to_cart($user_id,$food_id);
  }
 ?>
