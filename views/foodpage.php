@@ -93,7 +93,10 @@
                                    foreach($foods as $food) { 
                                 ?>
                                 
-                                    <div class="custom-order-foodCard">
+                                    <div class="custom-order-foodCard" 
+                                             data-Id="<?php echo $food->food_id; ?>"
+                                             data-food_name="<?php echo $food->food_name; ?>"
+                                    >
                                         <div class="image-c-card">
                                             <img class="img-c-c" src=<?php echo "$food->food_picture"; ?> />
                                         </div>
@@ -108,7 +111,7 @@
                             ?>
                             </div>
                         </div>
-                        <input id="food_id" hidden name="food_id" value="apple"/>
+                        <input hidden id="food_id"  name="food_id"/>
                         <input type="submit" value="Add To List" class="custom-order-btn" id="custom-order-btn"/>
                     </form>
                 </div>
@@ -140,7 +143,6 @@
            xml.onreadystatechange = ()=>{
                if (xml.readyState == 4 && xml.status == 200) {
                 console.log(xml.responseText);
-                //msg.innerText = xml.responseText;
               }
            }
            xml.open("GET","../controllers/addtobasket.php?id="+id+"&op=f",true);
@@ -158,9 +160,15 @@
       }
       
       let cardCon = document.getElementsByClassName("custom-order-foodCard");
+      let crntfood = document.getElementById("crntFood");
+      let foodIdInp = document.getElementById("food_id");
       for(let i=0;i<cardCon.length;i++){
-        cardCon[i].addEventListener("click",()=>{
-            alert("hi");
+        cardCon[i].addEventListener("click",(event)=>{
+            let foodId = event.currentTarget.getAttribute("data-Id");
+            let foodName = event.currentTarget.getAttribute("data-food_name"); 
+            FoodList();
+            crntfood.innerText=foodName;
+            foodIdInp.value = foodId;
         })
       }
 
