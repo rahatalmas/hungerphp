@@ -65,9 +65,9 @@ $cartList = fetchCartItems();
                                 <div class="item-taken-info">
                                     <h4><?php echo $foodItem['food_price']; ?> tk</h4>
                                     <div class="basket-quantity-btns">
-                                        <button class="qty-btn" data-op="sub" data-foodId=<?php echo $foodItem["food_id"] ?>>-</button>
+                                        <button class="qty-btn" data-op="s" data-foodId=<?php echo $foodItem["food_id"] ?>>-</button>
                                         <h4 class="qty"><?php echo $foodItem['quantity']; ?></h4>
-                                        <button class="qty-btn" data-op="add" data-foodId=<?php echo $foodItem["food_id"] ?>>+</button>
+                                        <button class="qty-btn" data-op="a" data-foodId=<?php echo $foodItem["food_id"] ?>>+</button>
                                     </div>
                                     <h4><?php echo $foodItem['food_price'] * $foodItem['quantity']; ?> tk</h4>
                                     <button class="cart-remove-btn">R</button>
@@ -116,8 +116,16 @@ $cartList = fetchCartItems();
             let target = event.target;
             let id = target.getAttribute("data-foodId");
             let op = target.getAttribute("data-op");
-            alert(id);
-            alert(op);
+            let xml = new XMLHttpRequest();
+           // alert(qty[i].innerText);
+            xml.onreadystatechange = ()=>{
+                if (xml.readyState == 4 && xml.status == 200) {
+                    console.log(xml.responseText);
+                    qty[Math.floor(i/2)].innerText = xml.responseText;
+                }
+            }
+            xml.open("GET","../controllers/addtobasket.php?id="+id+"&op="+op,true);
+            xml.send();
             })
         }
      </script>

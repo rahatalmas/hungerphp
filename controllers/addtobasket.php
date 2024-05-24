@@ -7,7 +7,16 @@
   $user_id = $_SESSION["user"]["user_id"];
   $food_id = $_GET["id"];
   $op = $_GET["op"];
-  //$_SESSION["basket"] = Arr
-  add_to_cart($user_id,$food_id);
+  if($op == 'f'){
+    add_to_cart($user_id,$food_id);
+  }else if($op == 'a'){
+    updateQuantity($user_id,$food_id);
+  }else if($op == 's'){
+    decreaseQuantity($user_id,$food_id);
+  }else if($op == 'd'){
+    delete_from_cart($userId, $foodId);
+  }else{
+    echo "invalid operation...";
+  }
  }
 ?>
