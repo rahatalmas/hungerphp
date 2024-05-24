@@ -65,9 +65,9 @@ $cartList = fetchCartItems();
                                 <div class="item-taken-info">
                                     <h4><?php echo $foodItem['food_price']; ?> tk</h4>
                                     <div class="basket-quantity-btns">
-                                        <button>-</button>
-                                        <h4><?php echo $foodItem['quantity']; ?></h4>
-                                        <button>+</button>
+                                        <button class="qty-btn" data-op="sub" data-foodId=<?php echo $foodItem["food_id"] ?>>-</button>
+                                        <h4 class="qty"><?php echo $foodItem['quantity']; ?></h4>
+                                        <button class="qty-btn" data-op="add" data-foodId=<?php echo $foodItem["food_id"] ?>>+</button>
                                     </div>
                                     <h4><?php echo $foodItem['food_price'] * $foodItem['quantity']; ?> tk</h4>
                                     <button class="cart-remove-btn">R</button>
@@ -79,8 +79,6 @@ $cartList = fetchCartItems();
 
                 </div>
             </div>
-            
-
 
             <div class="basket-items-calculations">
                 <div class="basket-calculation-card">
@@ -110,5 +108,18 @@ $cartList = fetchCartItems();
             </div>
         </div>
      </main>
+     <script>
+        let addBtnId = document.getElementsByClassName("qty-btn");
+        let qty = document.getElementsByClassName("qty");
+        for(let i=0;i<addBtnId.length;i++){
+            addBtnId[i].addEventListener("click",(event)=>{
+            let target = event.target;
+            let id = target.getAttribute("data-foodId");
+            let op = target.getAttribute("data-op");
+            alert(id);
+            alert(op);
+            })
+        }
+     </script>
 </body>
 </html>

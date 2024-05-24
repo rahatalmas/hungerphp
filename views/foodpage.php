@@ -129,7 +129,7 @@
                 //msg.innerText = xml.responseText;
               }
            }
-           xml.open("GET","../controllers/addtobasket.php?id="+id,true);
+           xml.open("GET","../controllers/addtobasket.php?id="+id+"&op=f",true);
            xml.send();
         })
       }
