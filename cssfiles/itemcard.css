@@ -73,3 +73,25 @@ body{
    justify-content: center;
    align-items: center;
 }
+.admin-btns{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.admin-button{
+   padding: 10px;
+   border: none;
+   background-color: rgb(255, 192, 110);
+   border-radius: 7px;
+   font-weight: 600;
+   margin: 10px 0px;
+   cursor: pointer;
+}
+
+.admin-food-section{
+   padding: 50px 0px;
+   border: 1px solid rgb(64, 42, 3);
+   border-radius: 10px;
+   background-color: #ECB176;
+   margin: 18px 80px;
+}

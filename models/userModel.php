@@ -3,19 +3,38 @@
 ?>
 
 <?php
-  function insert_user($user_name, $user_email, $user_password,$user_bio) {
+  function find_user($primarykey) {
+   global $conn;
+   $sql = "SELECT * FROM users WHERE user_name='$primarykey'";
+   $result = $conn->query($sql);
+   $row = $result->fetch_assoc();
+   if($row){
+    return $row;
+   }else{
+    return 0;
+   }
+  }
+
+  function register_user($user_info) {
     global $conn;
-    $user_name = mysqli_real_escape_string($conn, $user_name);
-    $user_email = mysqli_real_escape_string($conn, $user_email);
-    $user_password = mysqli_real_escape_string($conn, $user_password);
-    $user_bio = mysqli_real_escape_string($conn, $user_bio);
-    $sql = "INSERT INTO users (user_name, user_email, user_password, user_bio) 
-            VALUES ('$user_name','$user_email','$user_password','$user_bio')";
+    $columns = implode(", ",array_keys($user_info));
+    $escaped_values = array_map(array($conn, 'real_escape_string'), array_values($user_info));
+    $values  = implode("', '", $escaped_values);
+    $sql = "INSERT INTO `users`($columns) VALUES ('$values')";
     if($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        header("Location: http://localhost/hungerappphp/home.php");
+        header("Location: http://localhost/hungerphp/views/home.php");
+        return 1;
     }else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $conn->error;
+        header("Location: http://localhost/hungerphp/views/registerpage.php");
+        return 0;
     }
+  }
+?>
+
+<?php
+  class User{
+    
   }
 ?>

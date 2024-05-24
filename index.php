@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    hello
+    <div>
+        <img src="./assets/mobile2.png" alt="">
+    </div>
 </body>
 </html>

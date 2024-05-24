@@ -13,9 +13,9 @@
                 <img class="reg-img" src="../assets/anya.jpg"/>
                  <h1 class="reg-h1">Hunger Signup</h1>
             </div>
-            <form class="form" method="POST" action="../controllers/register.php">
+            <form class="form" method="POST" onsubmit="valid()" action="../controllers/register.php">
               <label class="form-label" for="user_name">user name</label>
-              <input id="user_name" name="user_name" class="form-input" required type="text" placeholder="prettyalmu" />
+              <input id="user_name" name="user_name" class="form-input" required type="text" placeholder="username" />
               <label class="form-label" for="user_email">email</label>
               <input id="user_email" name="user_email" class="form-input" required type="email" placeholder="someone@gmail.com" />
               <label class="form-label" for="user_password">password</label>
@@ -27,4 +27,5 @@
         </div>
     </main>
 </body>
+<script src="../jsfiles/validity.js"></script>
 </html>
