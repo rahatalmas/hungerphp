@@ -153,3 +153,50 @@ border-radius: 10px 20px;
   margin: 10px 0px;
   border-radius: 5px; 
 }
+
+
+/* custom order card*/
+
+.custom-order-foodCard{
+  padding: 10px;
+  display: flex;
+  height: 75px;
+  background-color: #ebdfdf;
+  border-radius: 10px;
+  margin: 7px 0px;
+  cursor: pointer;
+  border: 3px solid saddlebrown;
+}
+
+.selected{
+  background-color:#ebdfdf;
+  padding:10px 15px;
+  border-radius: 10px;
+  border:3px solid saddlebrown;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.image-c-card{
+  flex: 1;
+}
+.img-c-c{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.c-c-info{
+  flex: 2;
+  padding-left: 5px;
+}
+.selected p{
+  margin:0;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}

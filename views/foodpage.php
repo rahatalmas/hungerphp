@@ -3,6 +3,7 @@
     $jsonData = get_foods();
     $foods = json_decode($jsonData);
     session_start();
+    $customList = [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,16 +74,42 @@
              <div class="food-page-side-panel">
                 <div class="custom-order-card">
                     <h3>Make custom order</h3>
-                    <form>
-                        <label>Select date and time</label>
-                        <input id="date-time" class="c-inp" type="datetime-local" name="datetimelocal"/>
+                    <form method="POST" action="../controllers/customList.php">
+                        <label>Select date</label>
+                        <input id="date-time" class="c-inp" type="date" name="date"/>
                         <label>Select Meal Category</label>
                         <select id="mealtype" class="c-inp" name="mealtype">
                             <option class="c-inp">Breakfast</option>
                             <option class="c-inp">Lunch</option>
                             <option class="c-inp">Dinner</option>
                         </select>
-                        <input type="button" value="Add To List" class="custom-order-btn" id="custom-order-btn"/>
+                        <div class="custom-order-foodList">
+                            <p>Select Food</p>
+                            <div class="selected" onclick="FoodList()">
+                                <p id="crntFood">Konopeito</p><p>v</p>
+                            </div>
+                            <div id="list-con" class="hide">
+                                <?php 
+                                   foreach($foods as $food) { 
+                                ?>
+                                
+                                    <div class="custom-order-foodCard">
+                                        <div class="image-c-card">
+                                            <img class="img-c-c" src=<?php echo "$food->food_picture"; ?> />
+                                        </div>
+                                        <div class="c-c-info">
+                                            <p><?php echo $food->food_name?></p>
+                                            <p><?php echo $food->hotel_name?></p>
+                                            <p><?php echo $food->food_price?></p>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            ?>
+                            </div>
+                        </div>
+                        <input id="food_id" hidden name="food_id" value="apple"/>
+                        <input type="submit" value="Add To List" class="custom-order-btn" id="custom-order-btn"/>
                     </form>
                 </div>
                 <div class="custom-order-list">
@@ -120,6 +147,23 @@
            xml.send();
         })
       }
+
+      function FoodList(){
+        let listCon = document.getElementById("list-con");
+        if (listCon.className == "hide") {
+           listCon.className = "show";
+        } else {
+           listCon.className = "hide";
+        }
+      }
+      
+      let cardCon = document.getElementsByClassName("custom-order-foodCard");
+      for(let i=0;i<cardCon.length;i++){
+        cardCon[i].addEventListener("click",()=>{
+            alert("hi");
+        })
+      }
+
     </script>
 </body>
 </html>
