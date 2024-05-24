@@ -86,11 +86,11 @@ $cartList = fetchCartItems();
                         <div class="order-info">
                         <h4>Name: pretty</h4>
                             <label for="order_contact">Contact</label>
-                            <input class="order-inpt" type="text" placeholder="01*********" name="order_contact" />
+                            <input required class="order-inpt" type="text" placeholder="01*********" name="order_contact" />
                             <label for="order_location">location</label>
-                            <input class="order-inpt" type="text" placeholder="Daffodil University" name="order_location" />
+                            <input required class="order-inpt" type="text" placeholder="Daffodil University" name="order_location" />
                             <label>Select Delivery Time</label>
-                            <select class="order-inpt" name="delivery_time" >
+                            <select required class="order-inpt" name="delivery_time" >
                                 <option>Breakfast</option>
                                 <option>Lunch</option>
                                 <option>Dinner</option>
