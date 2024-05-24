@@ -1,0 +1,42 @@
+#mySidenav a {
+    position: absolute;
+    left: -150px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 125px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    padding-right: 70px;
+  }
+  
+  #mySidenav a:hover {
+    left: 0px;
+    padding:15px 25px;
+  }
+  
+  #dashborad {
+    top: 90px;
+    background-color: #04AA6D;
+  }
+  
+  #pen-order {
+    top: 120px;
+    background-color: #2196F3;
+  }
+  
+  #order-history {
+    top: 180px;
+    background-color: #f44336;
+  }
+  
+  #profile {
+    top: 240px;
+    background-color: #555
+  }
+
+  #logout {
+    top: 300px;
+    background-color: #b12525
+  }

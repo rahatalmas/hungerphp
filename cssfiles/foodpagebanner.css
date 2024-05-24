@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    
+}
+.food-page-banner{
+    background-color: bisque;
+}
+
+.banner-content{
+    height: 40vh;
+}
+
+.banner-content img{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}

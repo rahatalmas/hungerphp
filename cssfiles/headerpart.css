@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+}
+header{
+    background-color: rgb(252, 224, 98);
+}
+.header-component{
+   margin: auto;
+   max-width: 1200px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.logo{
+   display: flex;
+   align-items: center;
+   padding-left: 25px;
+}
+.logo h1{
+  margin: 0;
+}
+.logo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.nav-container{
+   display: flex;
+   flex: 1;
+   justify-content:center;
+   align-items: center;
+   padding: 10px;
+}
+.nav-item{
+   padding: 15px;
+   color:black;
+   text-decoration: none;
+   font-size: large;
+}
+.nav-item:hover{
+    color: rgb(15, 112, 15);
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+
+.profile-photo{
+    display: flex;
+    align-items: center;
+    padding-right: 25px;
+}
+.profile-photo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.profile-photo h1{
+    margin: 0;
+}

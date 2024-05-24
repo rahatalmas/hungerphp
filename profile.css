@@ -1,0 +1,100 @@
+body{
+    margin: 0;
+    background-color:rgb(255, 205, 150);
+}
+header{
+    margin: 0;
+    width: 100%;
+    height: 7vh;
+    background-color: bisque;
+}
+
+.profile-page-container{
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    padding: 25px;
+}
+
+.profile-info-section{
+    width:300px ;
+    padding:15px;
+    margin: 7.5px;
+    background-color: bisque;
+    border-radius: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.order-info-section{
+    flex: 2.5;
+    height: 150vh;
+    margin: 7.5px;
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.p-img-primarydata-container p,h1,h2,h3,h4,h5,h6{
+    margin:5px;
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin: 10px 0px;
+    letter-spacing: 0.4px;
+}
+.p-img-primarydata-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.username{
+    color: rgb(107, 106, 106);
+    font-size: small;
+    letter-spacing: 0.5px;
+}
+.p-img-container{
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+}
+.p-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    margin:0px 10px 0px 0px;
+    object-fit: cover;
+}
+.p-bio{
+    
+}
+.p-edit-btn{
+    cursor: pointer;
+    padding: 7px;
+    width: 100%;
+    border-radius: 7px;
+    border:none;
+    outline: none;
+    color: rgb(25, 59, 25);
+    background-color:rgb(255, 205, 150);
+}
+.border{
+    margin:20px 0;
+    height: 2px;
+    background-color:rgb(255, 205, 150);
+}
+.order-complete-box-container{
+    display: flex;
+}
+.o-c-b{
+    background-color:rgb(255, 205, 150);
+    margin-right: 10px;
+    padding: 15px;
+    width: 45%;
+    border-radius: 10px;
+    cursor:pointer;
+    border: none;
+    outline: none;
+    font-size:15px;
+}
