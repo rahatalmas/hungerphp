@@ -82,28 +82,47 @@ $cartList = fetchCartItems();
 
             <div class="basket-items-calculations">
                 <div class="basket-calculation-card">
-                    <div class="order-info">
-                       <h4>pretty</h4>
-                       <h4>daffodil Internation university</h4>
-                       <h4>ashulia khagan</h4>
-                       <h4>contact: 017********</h4>
-                    </div>
-                    <div class="calculation-details">
-                        <h2>Cart Total</h2>
-                        <div>
-                            <p>Cart SubTotal</p>
-                            <p>1800 Tk</p>
+                    <form method="POST" action="../controllers/confirmorder.php">
+                        <div class="order-info">
+                        <h4>Name: pretty</h4>
+                            <label for="order_contact">Contact</label>
+                            <input class="order-inpt" type="text" placeholder="01*********" name="order_contact" />
+                            <label for="order_location">location</label>
+                            <input class="order-inpt" type="text" placeholder="Daffodil University" name="order_location" />
+                            <label>Select Delivery Time</label>
+                            <select class="order-inpt" name="delivery_time" >
+                                <option>Breakfast</option>
+                                <option>Lunch</option>
+                                <option>Dinner</option>
+                                <option>Instant</option>
+                            </select>
+                            <p>Cash On Delivery</p>
                         </div>
-                        <div>
-                            <p>Delivery Charge</p>
-                            <p>Free</p>
+                        <div class="calculation-details">
+                            <h2>Order Details</h2>
+                            <?php
+                               $total = 0;
+                               foreach ($cartList as $foodItem) {
+                               $total+= ($foodItem['food_price']*$foodItem['quantity']);
+                            ?>
+                               <div>
+                                <p><?php echo $foodItem['food_name']?></p>
+                                <p><?php echo $foodItem['food_price']?> x <?php echo $foodItem['quantity']?></p>
+                               </div>
+                            <?php
+                               }
+                            ?>
+                            <div>
+                                <p>Cart Total</p>
+                                <p><?php echo $total ?></p>
+                            </div>
+                            <div>
+                                <p>Delivery Charge</p>
+                                <p>Free</p>
+                            </div>
+                            <button type="submit" name="confirm_order" value="Confirm Order">Confirm Order</button>
                         </div>
-                        <div>
-                            <p>Cart Total</p>
-                            <p>1800 Tk</p>
-                        </div>
-                        <button>Order</button>
-                   </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -124,7 +143,7 @@ $cartList = fetchCartItems();
                         alert(xml.responseText);
                         location.reload();
                     }else{
-                        qty[Math.floor(i/2)].innerText = xml.responseText;
+                        location.reload();
                     }
                 }
             }

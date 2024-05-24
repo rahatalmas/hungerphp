@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $user = find_user($user_name);
     if($user != 0){
         $_SESSION["user"] = $user;
-        header("Location: http://localhost/views/home.php");
+        header("Location: http://localhost/views/foodpage.php");
     }else{
         echo "not valid";
     }

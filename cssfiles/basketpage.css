@@ -1,5 +1,5 @@
 body{
-  background-color: bisque;
+  background-color: rgb(253, 226, 193);
 }
 .basket-container{
    display: flex;
@@ -9,7 +9,7 @@ body{
    margin: auto;
 }
 .basket-item-container{
-   flex:3;
+   flex:2;
    padding: 20px;
 }
 .basket-item-container-header{
@@ -28,7 +28,7 @@ body{
   margin-top: 10px;
 }
 .b-i-h-1{
-  flex: 1.5;
+  flex: 1;
 }
 .b-i-h-2{
   display: flex;
@@ -44,7 +44,7 @@ body{
  margin-bottom: 10px;
 }
 .item-info-section{
-flex: 1.5;
+flex: 1;
 display: flex;
 align-items: center;
 }
@@ -94,18 +94,18 @@ align-items: center;
   padding: 20px;
 }
 .basket-calculation-card{
-  background-color: antiquewhite;
+  background-color: rgb(247, 217, 179);
   padding: 10px;
   border-radius: 10px;
 }
 .order-info{
 }
 .order-info h4{
-  margin: 7px;
+  margin: 5px 0px;
 }
 .calculation-details{
   margin-top: 25px;
-  background-color: rgb(252, 229, 127);
+  background-color: rgb(247, 194, 126);
   border-radius: 10px;
   padding: 10px;
 }
@@ -113,7 +113,7 @@ align-items: center;
   margin: 10px 0px;
 }
 .calculation-details p{
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 .calculation-details div{
   display: flex;
@@ -127,5 +127,16 @@ align-items: center;
   border:none;
   outline: none;
   cursor: pointer;
-  background-color: rgb(253, 173, 54);
+  background-color: rgb(56, 33, 14);
+  color: white;
+}
+
+.order-inpt{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px;
+  margin:5px 0px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
