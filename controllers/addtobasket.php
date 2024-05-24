@@ -14,7 +14,7 @@
   }else if($op == 's'){
     decreaseQuantity($user_id,$food_id);
   }else if($op == 'd'){
-    delete_from_cart($userId, $foodId);
+    delete_from_cart($user_id, $food_id);
   }else{
     echo "invalid operation...";
   }

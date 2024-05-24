@@ -70,7 +70,7 @@ $cartList = fetchCartItems();
                                         <button class="qty-btn" data-op="a" data-foodId=<?php echo $foodItem["food_id"] ?>>+</button>
                                     </div>
                                     <h4><?php echo $foodItem['food_price'] * $foodItem['quantity']; ?> tk</h4>
-                                    <button class="cart-remove-btn">R</button>
+                                    <button class="qty-btn cart-remove-btn" data-op="d" data-foodId=<?php echo $foodItem["food_id"] ?>>R</button>
                                 </div>
                             </div>
                             <?php
@@ -117,11 +117,15 @@ $cartList = fetchCartItems();
             let id = target.getAttribute("data-foodId");
             let op = target.getAttribute("data-op");
             let xml = new XMLHttpRequest();
-           // alert(qty[i].innerText);
             xml.onreadystatechange = ()=>{
                 if (xml.readyState == 4 && xml.status == 200) {
                     console.log(xml.responseText);
-                    qty[Math.floor(i/2)].innerText = xml.responseText;
+                    if(op === 'd'){
+                        alert(xml.responseText);
+                        location.reload();
+                    }else{
+                        qty[Math.floor(i/2)].innerText = xml.responseText;
+                    }
                 }
             }
             xml.open("GET","../controllers/addtobasket.php?id="+id+"&op="+op,true);
