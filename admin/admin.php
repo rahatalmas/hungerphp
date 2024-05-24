@@ -22,6 +22,7 @@
      <?php
      include '../admin/adminbar.php';
      ?>
+     <div class="admin-food-section">
      <div id="food-section-items" class="section-items">
         <?php
           foreach ($foods as $food) {
@@ -43,6 +44,6 @@
           }
         ?>
    </div>
-   <div>
+  </div>
 </body>
 </html>

@@ -87,3 +87,11 @@ body{
    margin: 10px 0px;
    cursor: pointer;
 }
+
+.admin-food-section{
+   padding: 50px 0px;
+   border: 1px solid rgb(64, 42, 3);
+   border-radius: 10px;
+   background-color: #ECB176;
+   margin: 18px 80px;
+}

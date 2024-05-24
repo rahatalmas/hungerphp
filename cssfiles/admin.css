@@ -1,4 +1,14 @@
+#mySidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 180px; 
+    height: 95%; 
+    overflow-y: auto;
+    padding-top: 60px;
+}
 #mySidenav a {
+  /* z-index: 1000; */
     position: absolute;
     left: -150px;
     transition: 0.3s;
@@ -6,7 +16,7 @@
     width: 125px;
     text-decoration: none;
     font-size: 20px;
-    color: #ffffff;
+    color: #0d0d0d;
     border-radius: 0 5px 5px 0;
     padding-right: 70px;
   }
@@ -17,26 +27,26 @@
   }
   
   #dashborad {
-    top: 90px;
-    background-color: #04AA6D;
+    bottom: 300px;
+    background-color: #99eece;
   }
   
   #pen-order {
-    top: 120px;
-    background-color: #2196F3;
+    bottom: 240px;
+    background-color: #76d2ec;
   }
   
   #order-history {
-    top: 180px;
-    background-color: #f44336;
+    bottom: 180px;
+    background-color: #ff1306;
   }
   
   #profile {
-    top: 240px;
-    background-color: #555
+    bottom: 120px;
+    background-color: #eaf217
   }
 
   #logout {
-    top: 300px;
-    background-color: #b12525
+    bottom: 60px;
+    background-color: #e4a8e1
   }

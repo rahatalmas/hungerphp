@@ -19,7 +19,7 @@
             <a class="nav-item" href="/hungerphp/views/foodpage.php">Foods</a>
             <a class="nav-item" href="/">Hotels</a>
             <a class="nav-item" href="/hungerphp/views/basketpage.php">Basket</a>
-            <a class="nav-item" href="/hungerphp/views/login.php">Login</a>
+            <a class="nav-item" href="/hungerphp/views/loginas.php">Login</a>
             </nav>
             <div class="profile-photo">
                 <img src="../assets/anya.jpg"/>
