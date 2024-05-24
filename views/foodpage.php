@@ -68,19 +68,6 @@
                        ";
                     }
                    ?>
-                   <div class="food-card">
-                        <img class="food-card-img" style="width: 100%;" src="https://w0.peakpx.com/wallpaper/138/212/HD-wallpaper-naruto-uzumaki-alright-this-is-ichiraku-ramen-my-favorite-spot-in-konoha-i-ordered-us-some-ramen-so-dig-in-twitter.jpg"/>
-                        <div class="food-card-description">
-                            <h3>ichurika ramen</h3>
-                            <p>ramen please. hello i'm naruto uzumaki . i love ramen the most. ramen ramen . dattebayo</p>
-                            <h4>leaf village</h4>
-                            <h4>price: 250</h4>
-                            <form method="POST" action="../controllers/addtobasket.php">
-                              <input type="submit" value="Add To Card" class="food-card-add-btn"/>
-                           </form>
-                        </div>
-                     </div>
-
                 </div>
              </div>
              <div class="food-page-side-panel">
