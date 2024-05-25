@@ -74,7 +74,6 @@
              <div class="food-page-side-panel">
                 <div class="custom-order-card">
                     <h3>Make custom order</h3>
-                    <form method="POST" action="../controllers/customList.php">
                         <label>Select date</label>
                         <input id="date-time" class="c-inp" type="date" name="date"/>
                         <label>Select Meal Category</label>
@@ -113,10 +112,9 @@
                         </div>
                         <input hidden id="food_id"  name="food_id"/>
                         <input type="submit" value="Add To List" class="custom-order-btn" id="custom-order-btn"/>
-                    </form>
                 </div>
                 <div class="custom-order-list">
-                    <h3>Your Order List</h3>
+                    <h3>Your Custom List</h3>
                     <div class="list-card">
                        <h2></h2>
                     </div>
@@ -171,6 +169,26 @@
             foodIdInp.value = foodId;
         })
       }
+
+    let addlistBtn = document.getElementById("custom-order-btn");
+    addlistBtn.addEventListener("click", () => {
+        let foodId = document.getElementById("food_id").value;
+        let date = document.getElementById("date-time").value;
+        let deliveryTime = document.getElementById("mealtype").value;
+        let data = "food_id=" + encodeURIComponent(foodId) + "&date=" + encodeURIComponent(date) + "&deliveryTime=" + encodeURIComponent(deliveryTime);
+
+        let xml = new XMLHttpRequest();
+            xml.onreadystatechange = () => {
+                if (xml.readyState == 4 && xml.status == 200) {
+                    console.log(xml.responseText);
+                    alert(xml.responseText);
+                }
+            };
+            xml.open("POST", "../controllers/customList.php", true);
+            xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xml.send(data);
+    });
+
 
     </script>
 </body>
