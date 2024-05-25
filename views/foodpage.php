@@ -129,12 +129,12 @@
                             </div>
                         </div>
                     <?php } ?>
-                    <form>
+                    <form method="POST" action="../controllers/confirmorder.php">
                     <label for="order_contact">Contact</label>
                             <input required class="c-inp" type="text" placeholder="01*********" name="order_contact" />
                             <label for="order_location">location</label>
                             <input required class="c-inp" type="text" placeholder="Daffodil University" name="order_location" />
-                      <input type="button" value="Make Order" class="custom-order-btn"/>
+                      <input name="custom_order" type="submit" value="Make Order" class="custom-order-btn"/>
                     </form>
                 </div>
              </div>
