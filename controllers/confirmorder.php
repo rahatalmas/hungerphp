@@ -25,7 +25,11 @@ if (isset($_POST['confirm_order'])) {
         }
     }
     echo "order placed successfully";
-} else {
+}else if(isset($_POST['custom_order'])){
+    echo "custom order";
+}
+
+else {
     echo "Button not clicked";
 }
 ?>

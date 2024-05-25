@@ -5,7 +5,6 @@
     $jsonData = get_foods();
     $foods = json_decode($jsonData);
     $customList = getCustomListItems();
-    print_r($customList);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +76,7 @@
                 <div class="custom-order-card">
                     <h3>Make custom order</h3>
                         <label>Select date</label>
-                        <input id="date-time" class="c-inp" type="date" name="date"/>
+                        <input required id="date-time" class="c-inp" type="date" name="date"/>
                         <label>Select Meal Category</label>
                         <select id="mealtype" class="c-inp" name="mealtype">
                             <option class="c-inp">Breakfast</option>
@@ -130,8 +129,13 @@
                             </div>
                         </div>
                     <?php } ?>
-
-                    <input type="button" value="Make Order" class="custom-order-btn"/>
+                    <form>
+                    <label for="order_contact">Contact</label>
+                            <input required class="c-inp" type="text" placeholder="01*********" name="order_contact" />
+                            <label for="order_location">location</label>
+                            <input required class="c-inp" type="text" placeholder="Daffodil University" name="order_location" />
+                      <input type="button" value="Make Order" class="custom-order-btn"/>
+                    </form>
                 </div>
              </div>
         </div>
@@ -177,24 +181,24 @@
         })
       }
 
-    let addlistBtn = document.getElementById("custom-order-btn");
-    addlistBtn.addEventListener("click", () => {
-        let foodId = document.getElementById("food_id").value;
-        let date = document.getElementById("date-time").value;
-        let deliveryTime = document.getElementById("mealtype").value;
-        let data = "food_id=" + encodeURIComponent(foodId) + "&date=" + encodeURIComponent(date) + "&deliveryTime=" + encodeURIComponent(deliveryTime);
+        let addlistBtn = document.getElementById("custom-order-btn");
+        addlistBtn.addEventListener("click", () => {
+            let foodId = document.getElementById("food_id").value;
+            let date = document.getElementById("date-time").value;
+            let deliveryTime = document.getElementById("mealtype").value;
+            let data = "food_id=" + encodeURIComponent(foodId) + "&date=" + encodeURIComponent(date) + "&deliveryTime=" + encodeURIComponent(deliveryTime);
 
-        let xml = new XMLHttpRequest();
-            xml.onreadystatechange = () => {
-                if (xml.readyState == 4 && xml.status == 200) {
-                    console.log(xml.responseText);
-                    location.reload();
-                }
-            };
-            xml.open("POST", "../controllers/customList.php", true);
-            xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xml.send(data);
-    });
+            let xml = new XMLHttpRequest();
+                xml.onreadystatechange = () => {
+                    if (xml.readyState == 4 && xml.status == 200) {
+                        console.log(xml.responseText);
+                        location.reload();
+                    }
+                };
+                xml.open("POST", "../controllers/customList.php", true);
+                xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xml.send(data);
+        });
 
 
     </script>
