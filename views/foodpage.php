@@ -1,9 +1,11 @@
 <?php
+    session_start();
     include '../models/foodModel.php';
+    include '../models/customModel.php';
     $jsonData = get_foods();
     $foods = json_decode($jsonData);
-    session_start();
-    $customList = [];
+    $customList = getCustomListItems();
+    print_r($customList);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,16 +117,21 @@
                 </div>
                 <div class="custom-order-list">
                     <h3>Your Custom List</h3>
-                    <div class="list-card">
-                       <h2></h2>
-                    </div>
-                    <div class="list-card">
-                        <h2></h2>
-                     </div>
-                     <div class="list-card">
-                        <h2></h2>
-                     </div>
-                     <input type="button" value="Make Order" class="custom-order-btn"/>
+                    <?php foreach($customList as $food) { ?>
+                        <div class="custom-order-foodCard2">
+                            <div class="image-c-card">
+                                <img class="img-c-c" src="<?php echo $food['food_picture']; ?>" />
+                            </div>
+                            <div class="c-c-info">
+                                <p><?php echo $food['food_name']; ?></p>
+                                <p><?php echo $food['hotel_name']; ?></p>
+                                <p>Date: <?php echo $food['date']; ?></p>
+                                <p>Delivery Time: <?php echo $food['deliverytime']; ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                    <input type="button" value="Make Order" class="custom-order-btn"/>
                 </div>
              </div>
         </div>
@@ -181,7 +188,7 @@
             xml.onreadystatechange = () => {
                 if (xml.readyState == 4 && xml.status == 200) {
                     console.log(xml.responseText);
-                    alert(xml.responseText);
+                    location.reload();
                 }
             };
             xml.open("POST", "../controllers/customList.php", true);

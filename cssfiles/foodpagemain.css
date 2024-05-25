@@ -200,3 +200,14 @@ border-radius: 10px 20px;
 .hide{
   display: none;
 }
+
+.custom-order-foodCard2{
+  padding: 10px;
+  display: flex;
+  height: 100px;
+  background-color: #ebdfdf;
+  border-radius: 10px;
+  margin: 7px 0px;
+  cursor: pointer;
+  border: 3px solid saddlebrown;
+}

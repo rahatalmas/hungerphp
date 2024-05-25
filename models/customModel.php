@@ -1,6 +1,5 @@
 <?php
 include '../models/database.php';
-session_start();
 function getCustomListItems() {
     if (!isset($_SESSION["user"]["user_id"])) {
         return "User ID not set in session";

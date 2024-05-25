@@ -17,9 +17,11 @@ if (isset($_POST['confirm_order'])) {
                 VALUES ('$user_id', '$foodId','$quantity','$contact', '$location', '$deliveryTime','$date')";
         
         $result = $conn->query($sql);
-
+        
         if (!$result) {
             echo "Error: " . $conn->error;
+        }else{
+            delete_from_cart($user_id, $foodId);
         }
     }
     echo "order placed successfully";

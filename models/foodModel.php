@@ -14,7 +14,7 @@ function get_foods(){
    }
    $myJSON = json_encode($arr,JSON_UNESCAPED_SLASHES);
    //echo $myJSON;
-   $conn->close();
    return $myJSON;
 }
+
 ?>
