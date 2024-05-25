@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2024 at 03:15 AM
+-- Generation Time: May 25, 2024 at 03:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -67,6 +67,7 @@ INSERT INTO `customlist` (`user_id`, `food_id`, `date`, `deliverytime`) VALUES
 (10, 6, '0000-00-00', 'Breakfast'),
 (10, 7, '0000-00-00', 'Breakfast'),
 (10, 8, '2024-05-30', 'Lunch'),
+(10, 9, '2024-05-30', 'Breakfast'),
 (10, 11, '2024-05-28', 'Breakfast');
 
 -- --------------------------------------------------------
@@ -167,7 +168,13 @@ INSERT INTO `orderlist` (`order_id`, `ordered_user_id`, `ordered_food_id`, `quan
 (29, 10, 9, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-25'),
 (30, 10, 12, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-25'),
 (31, 10, 13, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-25'),
-(32, 10, 14, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-25');
+(32, 10, 14, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-25'),
+(34, 10, 4, 1, '01733783039', 'daffodil university', 'Lunch', 1, '2024-05-27'),
+(35, 10, 6, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '0000-00-00'),
+(36, 10, 7, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '0000-00-00'),
+(37, 10, 8, 1, '01733783039', 'daffodil university', 'Lunch', 1, '2024-05-30'),
+(38, 10, 9, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-30'),
+(39, 10, 11, 1, '01733783039', 'daffodil university', 'Breakfast', 1, '2024-05-28');
 
 -- --------------------------------------------------------
 
@@ -300,7 +307,7 @@ ALTER TABLE `hotels`
 -- AUTO_INCREMENT for table `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `users`

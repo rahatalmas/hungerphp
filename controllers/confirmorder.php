@@ -32,9 +32,10 @@ if (isset($_POST['confirm_order'])) {
     $contact = $_POST["order_contact"];
     $location = $_POST["order_location"];
     foreach ($customList as $item) {
-        $foodId = $item['food_id']; 
-        $quantity = $item['quantity'];
-
+        $foodId = $item['food_id'];
+        $date = $item['date'];
+        $deliveryTime = $item['deliverytime'];
+        $quantity = 1;
         $sql = "INSERT INTO orderlist (ordered_user_id, ordered_food_id,quantity, contact, location, delivery_time,date)
                 VALUES ('$user_id', '$foodId','$quantity','$contact', '$location', '$deliveryTime','$date')";
         
@@ -43,7 +44,7 @@ if (isset($_POST['confirm_order'])) {
         if (!$result) {
             echo "Error: " . $conn->error;
         }else{
-            delete_from_cart($user_id, $foodId);
+            echo "order confirmed";
         }
     }
 }

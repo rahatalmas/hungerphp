@@ -8,6 +8,7 @@ function getCustomListItems() {
     $user_id = $_SESSION["user"]["user_id"];
     $sql = "
     SELECT 
+        foods.food_id,
         foods.food_name,
         foods.food_picture,
         foods.food_provider_id,
